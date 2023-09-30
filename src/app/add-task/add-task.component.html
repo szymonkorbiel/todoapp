@@ -1,0 +1,20 @@
+<h2>Zadania</h2>
+<button (click)="addTaskWithPrompt()">Dodaj zadanie</button>
+<br>
+<div class="kanban-column" *ngFor="let status of taskStatuses">
+    <h2>{{ status.toUpperCase() }}</h2>
+    <div *ngFor="let task of getTasksByStatus(status)">
+        {{ task.description }}
+        
+        <!-- Przyciski do zmiany statusu -->
+        <div *ngIf="status !== 'doing'">
+            <button (click)="changeTaskStatus(task, 'doing')">Mark as Doing</button>
+        </div>
+        <div *ngIf="status !== 'done'">
+            <button (click)="changeTaskStatus(task, 'done')">Mark as Done</button>
+        </div>
+        <div *ngIf="status !== 'todo'">
+            <button (click)="changeTaskStatus(task, 'todo')">Mark as Todo</button>
+        </div>
+    </div>
+</div>

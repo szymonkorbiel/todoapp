@@ -1,0 +1,10 @@
+.kanban-column {
+    width: 33.33%;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+        min-height: 200px; /* Wartość można dostosować według potrzeb */
+    
+  }
+  

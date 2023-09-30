@@ -1,0 +1,26 @@
+<!-- Przycisk do dodawania nowej funkcjonalności -->
+<h2>Funkcjonalności</h2>
+<button (click)="addFeature()">Dodaj nową funkcjonalność</button>
+<div *ngFor="let feature of features">
+
+
+  <h2>{{ feature.name }}</h2>
+
+  <button (click)="deleteFeature(feature.name)">Usuń {{ feature.name }}</button> <!-- Nowy przycisk do usuwania funkcjonalności -->
+
+  <!-- Lista zadań -->
+  <ul>
+    <li *ngFor="let task of feature.tasks">
+      {{ task.description }}
+      <button (click)="editTask(feature.name, task.id)">Edytuj</button>
+      <button (click)="deleteTask(feature.name, task.id)">Usuń</button>
+    </li>
+  </ul>
+
+  <!-- Formularz dodawania zadania -->
+  <div>
+    <button (click)="addTaskWithPrompt(feature)">Dodaj zadanie do {{ feature.name }}</button>
+  </div>
+</div>
+
+
